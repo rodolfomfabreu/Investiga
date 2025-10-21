@@ -28,10 +28,10 @@
 ## Sobre o Projeto | About
 
 **PT-BR:**
-> Um jogo interativo de investigação desenvolvido em C que simula um detetive coletando pistas para resolver um caso. O projeto implementa estruturas de dados avançadas como árvores binárias de busca e tabelas hash para gerenciar mapas de ambientes, pistas e suspeitos. Ideal para aprendizado de programação em C, estruturas de dados e desenvolvimento de jogos textuais.
+> Um jogo interativo de investigação desenvolvido em C que simula um detetive coletando pistas para resolver um caso. O projeto implementa estruturas de dados avançadas como árvores binárias de busca e tabelas hash para gerenciar mapas de ambientes, pistas e suspeitos. Inclui sistema de ajuda integrado, demo automatizada completa, ambientes expandidos com 16 locais cada, histórias enriquecidas e casos pré-definidos. Ideal para aprendizado de programação em C, estruturas de dados e desenvolvimento de jogos textuais.
 
 **EN:**
-> An interactive investigation game developed in C that simulates a detective collecting clues to solve a case. The project implements advanced data structures such as binary search trees and hash tables to manage environment maps, clues, and suspects. Ideal for learning C programming, data structures, and text-based game development.
+> An interactive investigation game developed in C that simulates a detective collecting clues to solve a case. The project implements advanced data structures such as binary search trees and hash tables to manage environment maps, clues, and suspects. Includes integrated help system, complete automatic demo, expanded environments with 16 locations each, enriched stories, and pre-defined cases. Ideal for learning C programming, data structures, and text-based game development.
 
 ---
 
@@ -43,9 +43,12 @@
 - **Associação Pista-Suspeito**: Tabela hash para conectar pistas aos suspeitos automaticamente
 - **Modo Construtor**: Criação de casos personalizados com múltiplos ambientes e suspeitos
 - **Presets de Jogo**: Casos pré-definidos (básico e demo) para começar rapidamente
-- **Demo Automática**: Demonstração do jogo executando automaticamente todas as ações
+- **Demo Automática**: Demonstração completa com navegação automática e exibição de pistas
 - **Sistema de Acusação**: Mecânica de resolução do caso com validação do culpado
 - **Interface Interativa**: Menu intuitivo com navegação por comandos de texto
+- **Sistema de Ajuda**: Tutoriais integrados para jogo e modo construtor
+- **Ambientes Expandidos**: 16 cômodos no preset básico e 16 áreas no preset demo
+- **Histórias Enriquecidas**: Narrativas detalhadas e envolventes para cada caso
 
 **EN:**
 - **Map System**: Navigation between different rooms using binary search trees
@@ -53,9 +56,12 @@
 - **Clue-Suspect Association**: Hash table to automatically connect clues to suspects
 - **Builder Mode**: Creation of custom cases with multiple environments and suspects
 - **Game Presets**: Pre-defined cases (basic and demo) to start quickly
-- **Automatic Demo**: Game demonstration running all actions automatically
+- **Automatic Demo**: Complete demonstration with automatic navigation and clue display
 - **Accusation System**: Case resolution mechanics with suspect validation
 - **Interactive Interface**: Intuitive menu with text-based command navigation
+- **Help System**: Integrated tutorials for game and builder mode
+- **Expanded Environments**: 16 rooms in basic preset and 16 areas in demo preset
+- **Enriched Stories**: Detailed and engaging narratives for each case
 
 ---
 
@@ -82,14 +88,14 @@
 ## 🗂️ Estrutura | Structure
 ```
 Investiga/
-├── main.c              # Arquivo principal com lógica do jogo
-├── structs.h           # Definições de estruturas de dados
-├── arvore_binaria.c    # Implementação de árvores binárias
-├── arvore_busca.c      # Implementação de árvores de busca para pistas
-├── tabela_hash.c       # Implementação de tabelas hash
+├── main.c              # Arquivo principal com lógica do jogo (705 linhas)
+├── structs.h           # Definições de estruturas de dados (63 linhas)
+├── arvore_binaria.c    # Implementação de árvores binárias (85 linhas)
+├── arvore_busca.c      # Implementação de árvores de busca para pistas (108 linhas)
+├── tabela_hash.c       # Implementação de tabelas hash (70 linhas)
 ├── investiga.exe       # Executável compilado (Windows)
 ├── *.o                 # Arquivos objeto compilados
-└── README.md           # Documentação do projeto
+└── README.md           # Documentação do projeto (244 linhas)
 ```
 
 ---
@@ -153,6 +159,8 @@ Ao executar o programa, você terá acesso ao menu principal com as seguintes op
 2. **Criar jogo personalizado** - Modo construtor para criar casos customizados
 3. **Jogar** - Inicia o jogo com o caso atual
 4. **Demo automática** - Executa uma demonstração automática do jogo
+5. **Como jogar (ajuda)** - Explica detalhadamente como usar o jogo
+6. **Como criar um jogo personalizado (ajuda)** - Tutorial completo do modo construtor
 0. **Sair** - Encerra o programa
 
 ### Modo Jogo
@@ -171,6 +179,21 @@ No modo construtor, você pode:
 - **Definir culpado**: Estabelecer quem é o verdadeiro culpado
 - **Criar história**: Personalizar a narrativa inicial do caso
 
+### Demo Automatizada
+A demo automatizada oferece uma experiência completa:
+- **Navegação automática**: Move entre 10 locais diferentes
+- **Exibição de pistas**: Mostra todas as evidências disponíveis em cada cômodo
+- **Coleta automática**: Coleta pistas automaticamente sem interação
+- **Demonstração educativa**: Explica como o sistema funciona
+- **Casos pré-definidos**: Demonstração com história corporativa envolvente
+
+### Sistema de Ajuda Integrado
+O jogo inclui sistema de ajuda completo:
+- **Tutorial de jogo**: Explica objetivo, navegação e mecânicas
+- **Guia do construtor**: Passo a passo para criar casos personalizados
+- **Dicas estratégicas**: Orientações para investigações eficientes
+- **Exemplos práticos**: Casos de uso e melhores práticas
+
 **EN:**
 
 ### Main Menu
@@ -180,6 +203,8 @@ When running the program, you'll have access to the main menu with the following
 2. **Create custom game** - Builder mode to create custom cases
 3. **Play** - Starts the game with the current case
 4. **Automatic demo** - Runs an automatic game demonstration
+5. **How to play (help)** - Detailed explanation of how to use the game
+6. **How to create a custom game (help)** - Complete tutorial for builder mode
 0. **Exit** - Closes the program
 
 ### Game Mode
@@ -197,6 +222,21 @@ In builder mode, you can:
 - **Associate clue-suspect**: Connect clues to suspects
 - **Define culprit**: Establish who the real culprit is
 - **Create story**: Customize the initial case narrative
+
+### Automatic Demo
+The automatic demo offers a complete experience:
+- **Automatic navigation**: Moves between 10 different locations
+- **Clue display**: Shows all available evidence in each room
+- **Automatic collection**: Collects clues automatically without interaction
+- **Educational demonstration**: Explains how the system works
+- **Pre-defined cases**: Demonstration with engaging corporate story
+
+### Integrated Help System
+The game includes a complete help system:
+- **Game tutorial**: Explains objectives, navigation, and mechanics
+- **Builder guide**: Step-by-step instructions for creating custom cases
+- **Strategic tips**: Guidelines for efficient investigations
+- **Practical examples**: Use cases and best practices
 
 ---
 
